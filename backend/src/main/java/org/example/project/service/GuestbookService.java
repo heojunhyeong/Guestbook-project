@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class GuestbookService {
 
-    private GuestbookRepository guestBookRepository;
+    private final GuestbookRepository guestBookRepository;
 
     public void create(GuestbookDTO request) {
         Guestbook guestbook = new Guestbook(request.getNickname(), request.getContent());
@@ -33,7 +33,7 @@ public class GuestbookService {
     @Transactional
     public GuestbookResponseDTO create(GuestbookRequestDTO request) {
         Guestbook guestbook =
-                new Guestbook(request.getWriter(), request.getMessage());
+                new Guestbook(request.getNickname(), request.getContent());
 
         Guestbook saved = guestBookRepository.save(guestbook);
         return new GuestbookResponseDTO(saved);

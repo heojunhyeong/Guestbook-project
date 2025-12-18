@@ -13,7 +13,7 @@ services:
       - --collation-server=utf8mb4_unicode_ci
 
   backend:
-    build: ./project
+    build: ./backend
     container_name: backend
     ports:
       - "8080:8080"

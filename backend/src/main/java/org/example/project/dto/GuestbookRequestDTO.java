@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class GuestbookRequestDTO {
-    private String writer;
-    private String message;
+    private String nickname;
+    private String content;
 }
